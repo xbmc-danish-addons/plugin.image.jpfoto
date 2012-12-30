@@ -57,12 +57,8 @@ class JPFotoAddon(object):
             image = BASE_URL + m.group(1)
             id = m.group(2)
             title = m.group(3).decode('iso-8859-1')
-            author = m.group(4).decode('iso-8859-1')
-            date = m.group(5)
 
             item = xbmcgui.ListItem(title, iconImage = image)
-            item.setInfo('picture', {
-            })
             xbmcplugin.addDirectoryItem(HANDLE, PATH + '?serie=' + id, item, True)
 
         xbmcplugin.endOfDirectory(HANDLE)
